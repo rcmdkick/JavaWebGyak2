@@ -13,10 +13,10 @@ public class Repository {
     private Repository() {
         advertisers = new ArrayList<Advertiser>();
         Advertiser bela = new Advertiser("a1@t.hu");
-        bela.addProduct(new Product("komód",22000,"bútor"));
+        bela.addProduct(new Product("komod",22000,"butor"));
         advertisers.add(bela);
         Advertiser pisti = new Advertiser("a2@t.hu");
-        pisti.addProduct(new Product("anyád",22000,"ember"));
+        pisti.addProduct(new Product("anyad",22000,"ember"));
         advertisers.add(pisti);
 
     }

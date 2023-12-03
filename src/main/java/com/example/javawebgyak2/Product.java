@@ -17,7 +17,7 @@ public class Product {
 
     String reservedby;
 
-    public Product(String name, int price, String keywords) {
+    public Product(String name, int price, String keyword) {
         this.name = name;
         this.price = price;
         this.keyword = keyword;

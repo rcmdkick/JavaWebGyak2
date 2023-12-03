@@ -1,6 +1,8 @@
 <%@ page import="com.example.javawebgyak2.Advertiser" %>
 <%@ page import="com.example.javawebgyak2.Product" %>
-<%@ page import="com.example.javawebgyak2.Repository" %><%--
+<%@ page import="com.example.javawebgyak2.Repository" %>
+<%@ page import="com.example.javawebgyak2.FilteredModel" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: GamerKick
   Date: 2023-12-03
@@ -16,7 +18,7 @@
 <h1>MainPage</h1>
 <%
     Advertiser user = (Advertiser) request.getSession().getAttribute("user");
-    //Repository repo = Repository.getInstance();
+
 %>
 Cim: <%=user.getEmail()%> <br>
 Hirdetett termékek:
@@ -45,5 +47,14 @@ Hirdetett termékek:
     <input type="submit" value="Felvesz">
 </form>
 
+<h3>Keresés</h3>
+<form action="filter-servlet" method="get">
+    <select name="kereses" id="kereses" multiple>
+        <%for (String k:Product.getAllkeywords()) {%>
+        <option value="<%=k%>"><%=k%></option>
+        <% } %>
+    </select>
+    <input type="submit" value="Keres">
+</form>
 </body>
 </html>
